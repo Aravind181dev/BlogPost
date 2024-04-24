@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login Page</title>
+  <!--link rel="stylesheet" href="{% static 'css/log.css' %}"-->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!--link rel="stylesheet" href="{% static 'css/styles.css' %}"-->
+<style>
+  
+
+</style>
+</head>
+
+<body class="flex justify-center items-center h-screen bg-gray-100">
+  <div class="container bg-white max-w-sm p-8 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+    
+    <form method="POST" action="{% url 'signin' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="email">Username:</label>
+        <input type="text" name="username" placeholder="Username" required
+          class="w-full px-4 py-2 border border-gray-300 rounded mt-2 focus:outline-none focus:border-blue-500">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required
+          class="w-full px-4 py-2 border border-gray-300 rounded mt-2 focus:outline-none focus:border-blue-500">
+      </div>
+
+      <div class="form-group">
+      <!--button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Button
+      </button-->
+        <input type="submit"   value="Login"
+          class="w-full bg-blue-700  hover:bg-blue-700  text-white font-bold py-2 px-4 rounded mt-4 focus:outline-none focus:shadow-outline cursor-pointer"-->
+      </div>
+    </form>
+    
+    <div class="text-center text-sm mt-4">
+      <p class="mb-2">Not a member? <a href="{% url 'signup' %}" class="text-blue-500">Signup</a></p>
+      <p class="text-red-500">{{error_message}}</p>
+    </div>
+  </div>
+</body>
+
+</html>

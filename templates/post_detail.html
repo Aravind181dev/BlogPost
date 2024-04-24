@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlogHome</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      min-height: 100vh;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans flex flex-col justify-between">
+  <nav class="bg-blue-900 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a class="text-white text-lg font-semibold" href="#">BlogHome</a>
+      <div>
+        <a href="{% url 'home' %}" class="text-white mr-4 hover:text-gray-200">Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-4 py-8 flex-grow">
+    <div class="max-w-4xl mx-auto bg-white shadow-md rounded-md p-8">
+      <h1 class="text-4xl font-bold mb-8">{{ post.title }}</h1>
+      <p class="text-lg text-gray-700 leading-relaxed mb-12">{{ post.content }}</p>
+    </div>
+  </div>
+
+  <footer class="bg-gray-900 text-white py-4 text-center">
+    <div class="container mx-auto">
+      <p>&copy; 2024 BlogHome. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
