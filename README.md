@@ -18,7 +18,7 @@ The Blog Management System is a web application designed to simplify the process
 **Technologies Used:**
 
 - **Django**
-- **HTML/CSS:** T
+- **HTML/CSS**
 - **Tailwind CSS**
 - **JavaScript** 
 
